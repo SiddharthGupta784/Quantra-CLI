@@ -5,7 +5,7 @@
 ### Describe your agent's world in plain English. Get a test suite. Get a verdict.
 
 Turn plain-English scenarios into a **golden test set**, then score any AI agent against it
-with a **configurable LLM judge**, with optional **Promptfoo** and **Garak** integrations.
+with a **configurable LLM judge**, with optional **Prompt Evaluations** and **Adverse Tests** integrations.
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.1.0-blue)
