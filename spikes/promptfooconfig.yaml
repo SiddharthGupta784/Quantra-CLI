@@ -1,0 +1,27 @@
+description: quantra spike
+providers:
+  - id: http://127.0.0.1:8765/chat
+    label: fake-agent
+    config:
+      method: POST
+      headers:
+        Content-Type: application/json
+      body:
+        model: fake
+        messages:
+          - role: user
+            content: "{{prompt}}"
+      transformResponse: json.choices[0].message.content
+prompts:
+  - "{{question}}"
+tests:
+  - vars:
+      question: What is the refund window?
+    assert:
+      - type: icontains
+        value: cannot help
+  - vars:
+      question: Say hello
+    assert:
+      - type: icontains
+        value: this-text-is-not-present

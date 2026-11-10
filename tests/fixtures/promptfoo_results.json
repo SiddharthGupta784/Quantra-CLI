@@ -1,0 +1,471 @@
+{
+  "evalId": "eval-TB4-2026-11-10T06:57:16",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-11-10T06:57:16.826Z",
+    "prompts": [
+      {
+        "id": "d3bcaf71c11c2678899be04d872718325f0916b3b0705e805ee29930663a42e2",
+        "raw": "{{question}}",
+        "label": "{{question}}",
+        "provider": "fake-agent",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 1,
+          "testErrorCount": 0,
+          "testCacheHitCount": 0,
+          "assertPassCount": 1,
+          "assertFailCount": 1,
+          "totalLatencyMs": 70,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "icontains",
+                "value": "cannot help"
+              }
+            }
+          ]
+        },
+        "id": "2dcb62aa-4653-494d-905e-48b7104d1e91",
+        "latencyMs": 22,
+        "namedScores": {},
+        "prompt": {
+          "raw": "What is the refund window?",
+          "label": "{{question}}",
+          "config": {}
+        },
+        "promptId": "d3bcaf71c11c2678899be04d872718325f0916b3b0705e805ee29930663a42e2",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8765/chat",
+          "label": "fake-agent"
+        },
+        "response": {
+          "raw": "{\"id\": \"x\", \"object\": \"chat.completion\", \"choices\": [{\"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"I cannot help with that. You said: What is the refund window?\"}, \"finish_reason\": \"stop\"}]}",
+          "latencyMs": 22,
+          "cached": false,
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "202",
+                "content-type": "application/json",
+                "date": "Tue, 10 Nov 2026 06:57:16 GMT",
+                "server": "BaseHTTP/0.6 Python/3.12.11"
+              }
+            }
+          },
+          "output": "I cannot help with that. You said: What is the refund window?",
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "question": "What is the refund window?"
+          },
+          "assert": [
+            {
+              "type": "icontains",
+              "value": "cannot help"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "What is the refund window?"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "202",
+              "content-type": "application/json",
+              "date": "Tue, 10 Nov 2026 06:57:16 GMT",
+              "server": "BaseHTTP/0.6 Python/3.12.11"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Expected output to contain \"this-text-is-not-present\"",
+        "gradingResult": {
+          "pass": false,
+          "score": 0,
+          "reason": "Expected output to contain \"this-text-is-not-present\"",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": false,
+              "score": 0,
+              "reason": "Expected output to contain \"this-text-is-not-present\"",
+              "assertion": {
+                "type": "icontains",
+                "value": "this-text-is-not-present"
+              }
+            }
+          ]
+        },
+        "id": "3c8aa426-af9c-4de1-902c-1933b983c1ba",
+        "latencyMs": 48,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Say hello",
+          "label": "{{question}}",
+          "config": {}
+        },
+        "promptId": "d3bcaf71c11c2678899be04d872718325f0916b3b0705e805ee29930663a42e2",
+        "promptIdx": 0,
+        "provider": {
+          "id": "http://127.0.0.1:8765/chat",
+          "label": "fake-agent"
+        },
+        "response": {
+          "raw": "{\"id\": \"x\", \"object\": \"chat.completion\", \"choices\": [{\"index\": 0, \"message\": {\"role\": \"assistant\", \"content\": \"I cannot help with that. You said: Say hello\"}, \"finish_reason\": \"stop\"}]}",
+          "latencyMs": 48,
+          "cached": false,
+          "metadata": {
+            "http": {
+              "status": 200,
+              "statusText": "OK",
+              "headers": {
+                "content-length": "185",
+                "content-type": "application/json",
+                "date": "Tue, 10 Nov 2026 06:57:16 GMT",
+                "server": "BaseHTTP/0.6 Python/3.12.11"
+              }
+            }
+          },
+          "output": "I cannot help with that. You said: Say hello",
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          }
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "vars": {
+            "question": "Say hello"
+          },
+          "assert": [
+            {
+              "type": "icontains",
+              "value": "this-text-is-not-present"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "tokenUsage": {
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "total": 0,
+          "numRequests": 1,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          },
+          "assertions": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            }
+          }
+        },
+        "vars": {
+          "question": "Say hello"
+        },
+        "metadata": {
+          "http": {
+            "status": 200,
+            "statusText": "OK",
+            "headers": {
+              "content-length": "185",
+              "content-type": "application/json",
+              "date": "Tue, 10 Nov 2026 06:57:16 GMT",
+              "server": "BaseHTTP/0.6 Python/3.12.11"
+            }
+          },
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 1
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 1,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 2,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 99,
+      "evaluationDurationMs": 99
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "quantra spike",
+    "prompts": [
+      "{{question}}"
+    ],
+    "providers": [
+      {
+        "id": "http://127.0.0.1:8765/chat",
+        "label": "fake-agent",
+        "config": {
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "model": "fake",
+            "messages": [
+              {
+                "role": "user",
+                "content": "{{prompt}}"
+              }
+            ]
+          },
+          "transformResponse": "json.choices[0].message.content"
+        }
+      }
+    ],
+    "tests": [
+      {
+        "vars": {
+          "question": "What is the refund window?"
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "cannot help"
+          }
+        ]
+      },
+      {
+        "vars": {
+          "question": "Say hello"
+        },
+        "assert": [
+          {
+            "type": "icontains",
+            "value": "this-text-is-not-present"
+          }
+        ]
+      }
+    ],
+    "env": {},
+    "outputPath": [
+      "results.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {},
+    "basePath": "C:\\QuantraCLI\\spikes"
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.125.1",
+    "nodeVersion": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64",
+    "exportedAt": "2026-11-10T06:57:16.981Z",
+    "evaluationCreatedAt": "2026-11-10T06:57:16.826Z"
+  },
+  "vars": [
+    "question"
+  ],
+  "runtimeOptions": {
+    "eventSource": "cli",
+    "showProgressBar": true,
+    "repeat": 1,
+    "maxConcurrency": 4,
+    "cache": false
+  }
+}

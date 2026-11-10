@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quantra"
+version = "1.1.0"
+description = "Quantra CLI: plain-English scenarios to golden test sets, scored by a configurable LLM judge."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.7",
+  "pydantic>=2.6",
+  "pydantic-settings>=2.3",
+  "pyyaml>=6.0",
+  "ruamel.yaml>=0.18",
+  "httpx>=0.27",
+  "tenacity>=8.2",
+  "jinja2>=3.1",
+  "deepeval>=4.3.3,<4.4",  # pinned after M0 spike (docs/spikes/m0-findings.md)
+  "openai>=1.30",
+  "anthropic>=0.30",
+  "ollama>=0.3",
+]
+
+[project.optional-dependencies]
+cuda = ["torch>=2.2", "transformers>=4.40", "accelerate>=0.30"]
+garak = ["garak>=0.16,<0.17"]
+dev = [
+  "pytest",
+  "pytest-asyncio",
+  "respx",
+  "ruff",
+  "mypy",
+  "types-PyYAML",
+  "pip-audit",
+]
+
+[project.scripts]
+quantra = "quantra.cli.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quantra"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+extend-exclude = ["spikes"]  # throwaway M0 spike scripts, never imported by src/quantra
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src/quantra"]
+warn_unused_ignores = true
+check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = ["quantra.core.*", "quantra.connectors.*"]
+strict = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+markers = [
+  "live: tests that call real external services (skipped by default)",
+  "gpu: tests that require a CUDA GPU (skipped by default)",
+]
+addopts = "-m 'not live and not gpu'"

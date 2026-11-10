@@ -1,0 +1,17 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  live-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --extra dev
+      # Stub: live tests need provider secrets; enable once they exist.
+      - run: uv run pytest -m live || echo "no live tests yet"
+      - run: uv run pip-audit
